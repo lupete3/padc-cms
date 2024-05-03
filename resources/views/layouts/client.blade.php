@@ -106,7 +106,7 @@
                         </li>
                         <div class="rapports_active">
                             <li class="nav-item">
-                                <a class="nav-link" href="rapports.html">
+                                <a class="nav-link" href="{{ route('rapports.allUsers') }}">
                                     <p>Nos Rapports</p>
                                 </a>
                             </li>

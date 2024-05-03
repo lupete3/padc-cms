@@ -12,6 +12,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\PartenaireController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RapportController;
 use App\Http\Controllers\ZoneController;
 use Illuminate\Support\Facades\Route;
 
@@ -99,6 +100,14 @@ Route::middleware('auth')->prefix('admin')->group( function () {
     Route::delete('/partenaires/{partenaire}/destroy', [PartenaireController::class, 'destroy'])->name('partenaires.delete');
     Route::get('/partenaires', [PartenaireController::class, 'create'])->name('partenaires.create');
     Route::post('/partenaires/store', [PartenaireController::class, 'store'])->name('partenaires.store');
+
+    Route::get('/list-rapports', [RapportController::class, 'index'])->name('rapports.index');
+    Route::get('/nos-rapports', [RapportController::class, 'rapport'])->name('rapports.allUsers');
+    Route::put('/rapports/{rapport}/update', [RapportController::class, 'update'])->name('rapports.update');
+    Route::get('/rapports/{rapport}/edit', [RapportController::class, 'show'])->name('rapports.show');
+    Route::delete('/rapports/{rapport}/destroy', [RapportController::class, 'destroy'])->name('rapports.delete');
+    Route::get('/rapports', [RapportController::class, 'create'])->name('rapports.create');
+    Route::post('/rapports/store', [RapportController::class, 'store'])->name('rapports.store');
 
     Route::get('/nos-compte', [CompteController::class, 'index'])->name('comptes.index');
     Route::put('/comptes/{compte}/update', [CompteController::class, 'update'])->name('comptes.update');

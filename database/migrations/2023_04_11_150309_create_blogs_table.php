@@ -18,6 +18,7 @@ return new class extends Migration
             $table->longText('description');
             $table->string('image');
             $table->foreignId('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('eauipe')->nullable();
             $table->timestamps();
         });
     }

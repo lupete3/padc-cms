@@ -35,37 +35,25 @@
                   </h6>
                 </div> 
               @endif
-
-              <form action="{{ route('blogs.update', $blog->id) }}" method="POST" id="form" enctype="multipart/form-data" >
+                @foreach ($expertises as $expertise)
+              <form action="{{ route('expertises.update', $expertise->id) }}" method="POST" id="form" enctype="multipart/form-data" >
                 @method('PUT')
                 @csrf
                 <div class="card card-primary card-outline">
                   <div class="card-header">
-                    <h3 class="card-title">Compléter les informations de l'actualité</h3>
+                    <h3 class="card-title">Compléter les informations </h3>
                   </div>
                   <!-- /.card-header -->
                     <div class="card-body">
-                      <div class="form-group">
-                        <label>Choisir une catégorie </label>
-                        <select class="form-control" name="category_id" id="category_id" required>
-                            @foreach ($viewData['categories'] as $category)
-                              <option @selected(old('category_id', $blog->category_id) == $category->id) value="{{ $category->id }}" >{{ $category->name }}</option>
-                            @endforeach
-                        </select>
-                      </div>
                       
                       <div class="form-group">
-                        <label for="title">Titre d l'article</label>
-                        <input class="form-control" name="title" value="{{ $blog->title }}" id="title" placeholder="Titre de l'article">
+                        <label for="title">Titre </label>
+                        <input class="form-control" name="title" value="{{ $expertise->title }}" id="title" placeholder="Titre de l'article">
                       </div>
                       <div class="form-group">
-                        <label for="title">Equipe</label>
-                        <input class="form-control" name="equipe" value="{{ $blog->equipe }}" id="equipe" placeholder="Equipe du projet">
-                      </div>
-                      <div class="form-group">
-                        <label>Description de l'actualité</label>
-                          <textarea id="compose-textarea" name="description" value="{{ $blog->description }}"  class="form-control" style="height: 300px">
-                            Description de l'actualité
+                        <label>Description </label>
+                          <textarea id="compose-textarea" name="description" value="{{ $expertise->description }}"  class="form-control" style="height: 300px">
+                            {{ $expertise->description }}
                           </textarea>
                       </div>
                       <div class="form-group form-row">
@@ -76,7 +64,7 @@
                           </div>
                         </div>
                         <div class="col-md-6">
-                          <img src="{{ asset('image-blog/'.$blog->image)}}" height="100" alt="" srcset="">
+                          <img src="{{ asset('image-expertise/'.$expertise->image)}}" height="100" alt="" srcset="">
                         </div>
                       </div>
                     </div>
@@ -90,6 +78,7 @@
                   <!-- /.card-footer -->
                 </div>
               </form>
+              @endforeach
               <!-- /.card -->
             </div>
             <!-- /.col -->

@@ -53,7 +53,10 @@
                             </select>
                         </div>
                         <div class="form-group">
-                          <input class="form-control" name="title" value="{{ old('title') }}" id="title" placeholder="Titre de l'article">
+                          <input class="form-control" name="title" value="{{ old('title') }}" id="title" placeholder="Titre du projet">
+                        </div>
+                        <div class="form-group">
+                          <input class="form-control" name="equipe" value="{{ old('equipe') }}" id="equipe" placeholder="Equipe du projet">
                         </div>
                         <div class="form-group">
                           <label>Description de l'actualité</label>

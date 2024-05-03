@@ -51,6 +51,7 @@ class BlogController extends Controller
         $blog->slug = Str::slug($request->title);
         $blog->description = $request->description;
         $blog->category_id = $request->category_id;
+        $blog->equipe = $request->equipe;
 
         $imageName = time().'.'.$request->image->extension();  
         $request->image->move('image-blog', $imageName);
@@ -92,6 +93,7 @@ class BlogController extends Controller
         $blog->slug = Str::slug($request->title);
         $blog->description = $request->description;
         $blog->category_id = $request->category_id;
+        $blog->equipe = $request->equipe;
 
         $blog->save();
 

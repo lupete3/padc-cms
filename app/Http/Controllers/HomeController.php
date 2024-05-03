@@ -27,7 +27,7 @@ class HomeController extends Controller
 
         $viewData['missions'] = Zone::latest()->get();
 
-        $viewData['projets'] = Blog::latest()->get();
+        $viewData['projets'] = Blog::latest()->paginate(3);
 
         $viewData['expertises'] = Expertise::latest()->get();
 
@@ -41,7 +41,7 @@ class HomeController extends Controller
     public function blogs()
     {
         $viewData = [];
-        $viewData["title"] = "IAMR Asbl | Blogs";
+        $viewData["title"] = "PADC Asbl | Blogs";
         $viewData['blogs'] = Blog::latest()->paginate(9);
 
         $viewData['categories'] = Category::all();
@@ -52,7 +52,7 @@ class HomeController extends Controller
     public function show(Blog $slug)
     {
         $viewData = [];
-        $viewData["title"] = "IAMR Asbl | ".$slug->title;
+        $viewData["title"] = "PADC Asbl | ".$slug->title;
         $blog = $slug;
 
         $viewData['blogs'] = Blog::latest()->paginate(3);
@@ -66,7 +66,7 @@ class HomeController extends Controller
     public function showByCategory(Category $slug)
     {
         $viewData = [];
-        $viewData["title"] = "IAMR Asbl | ".$slug->name;
+        $viewData["title"] = "PADC Asbl | ".$slug->name;
 
         $viewData['categories'] = Category::all();
 

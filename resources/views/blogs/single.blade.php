@@ -42,8 +42,8 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <div class="main_text">
-                  {!! $blog->description !!}
+                <div class="projets_all">
+                    <p class="text">{!! $blog->description !!}</p>
                 </div>
             </div>
         </div>

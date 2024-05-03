@@ -295,7 +295,8 @@
                     <div class="projets_all_1">
                         <img width="100%" height="250em" src="image-blog/{{ $projet->image }}" alt="logo de l'organisation">
                         <div class="projets_all_dateandequipe">
-                            <p>{{ date('d m Y ', strtotime($projet->created_at)) }} </p>
+                            <p><i class="fa-solid fa-calendar-days"></i>{{ date('d m Y ', strtotime($projet->created_at)) }} <span><i
+                                class="fa-solid fa-people-group"></i>{{ $projet->equipe }}</span></p>
                         </div>
                         <h3>{{ $projet->title }} </h3>
 

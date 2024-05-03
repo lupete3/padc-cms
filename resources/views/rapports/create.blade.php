@@ -35,55 +35,34 @@
                   </h6>
                 </div> 
               @endif
-
-              <form action="{{ route('blogs.update', $blog->id) }}" method="POST" id="form" enctype="multipart/form-data" >
-                @method('PUT')
+              <form action="{{ route('rapports.store') }}" method="POST" id="form" enctype="multipart/form-data" >
+                @method('POST')
                 @csrf
                 <div class="card card-primary card-outline">
                   <div class="card-header">
-                    <h3 class="card-title">Compléter les informations de l'actualité</h3>
+                    <h3 class="card-title">Compléter les informations </h3>
                   </div>
                   <!-- /.card-header -->
                     <div class="card-body">
-                      <div class="form-group">
-                        <label>Choisir une catégorie </label>
-                        <select class="form-control" name="category_id" id="category_id" required>
-                            @foreach ($viewData['categories'] as $category)
-                              <option @selected(old('category_id', $blog->category_id) == $category->id) value="{{ $category->id }}" >{{ $category->name }}</option>
-                            @endforeach
-                        </select>
-                      </div>
                       
-                      <div class="form-group">
-                        <label for="title">Titre d l'article</label>
-                        <input class="form-control" name="title" value="{{ $blog->title }}" id="title" placeholder="Titre de l'article">
-                      </div>
-                      <div class="form-group">
-                        <label for="title">Equipe</label>
-                        <input class="form-control" name="equipe" value="{{ $blog->equipe }}" id="equipe" placeholder="Equipe du projet">
-                      </div>
-                      <div class="form-group">
-                        <label>Description de l'actualité</label>
-                          <textarea id="compose-textarea" name="description" value="{{ $blog->description }}"  class="form-control" style="height: 300px">
-                            Description de l'actualité
-                          </textarea>
-                      </div>
                       <div class="form-group form-row">
                         <div class="col-md-6">
+                          <input class="form-control" type="text" name="titre" placeholder="Titre du rapport" required>
+                        </div>
+                      
+                        <div class="col-md-6">
                           <div class="btn btn-default btn-file ">
-                            <i class="fas fa-paperclip"></i> Choisir l'image de mise en avant
-                            <input type="file" id="image" name="image">
+                            <i class="fas fa-paperclip"></i> Choisir le fichier  
+                            <input type="file" id="rapport" name="rapport">
                           </div>
                         </div>
-                        <div class="col-md-6">
-                          <img src="{{ asset('image-blog/'.$blog->image)}}" height="100" alt="" srcset="">
-                        </div>
                       </div>
+
                     </div>
                     <!-- /.card-body -->
                     <div class="card-footer">
                       <div class="float-right mr-2" style="margin-top: 0px;">
-                        <button type="submit" id="edit_article" name="edit_article" class="btn btn-primary"><i class="far fa-check-circle"></i> Enregistrer la modification </button>
+                        <button type="submit" id="edit_article" name="edit_article" class="btn btn-primary"><i class="far fa-check-circle"></i> Enregistrer </button>
                       </div>
                     </div>
                     

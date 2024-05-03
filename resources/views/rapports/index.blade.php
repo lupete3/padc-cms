@@ -37,7 +37,7 @@
             @endif
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">{{ $viewData['title'] }} </h3> <a href="{{ route('blogs.create')}}" class="btn btn-success float-right"><i class="fa fa-plus"></i> Ajouter nouvelle actualité</a>
+                <h3 class="card-title">{{ $viewData['title'] }} </h3> <a href="{{ route('rapports.create')}}" class="btn btn-success float-right"><i class="fa fa-plus"></i> Ajouter un rapport</a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -46,32 +46,24 @@
                   <thead>
                   <tr>
                     <th>N°</th>
-                    <th>Equipe</th>
-                    <th>Titre Actualités</th>
-                    <th>Date Publication</th>
-                    <th>Catégorie</th>
-                    <th>Description</th>
-                    <th>Image</th>
+                    <th>Titre</th>
+                    <th>Rapport</th>
                     <th></th>
                   </tr>
                   </thead>
                   <tbody>
                     @php $i=1; @endphp
-                    @foreach($viewData['blogs'] as $blog)
+                    @foreach($viewData['rapports'] as $rapport)
                       <tr>
                         <td>{{$i++}}</td>
-                        <td>{{ $blog->equipe }}</td>
-                        <td>{{ $blog->title }}</td>
-                        <td>{{ date('d/m/Y à H:i', strtotime($blog->created_at)) }}</td>
-                        <td>{{ $blog->category->name}}</td>
-                        <td>{!! Str::limit($blog->description, 578); !!}</td>
+                        <td>{{ $rapport->titre }}</td>
                         <td>
-                          <img src="{{ asset('image-blog/'.$blog->image)}}" height="70" alt="" srcset="">
+                          <a target="__blank" href="{{ asset('rapports/'.$rapport->rapport)}}"><i class="fas fa-eye"></i> Afficher</a>
                         </td>
                         <td>
                           <div class="btn-group" role="group">
-                            <a href="{{ route('blogs.show', $blog->id) }}" id="editBtn" value="{{ $blog->id }}" class="btn btn-primary btn-sm " title=""><i class="fa fa-edit"></i></a>
-                            <form action="{{ route('blogs.delete', $blog->id) }}" method="post">
+                            <a href="{{ route('rapports.show', $rapport->id) }}" id="editBtn" value="{{ $rapport->id }}" class="btn btn-primary btn-sm " title=""><i class="fa fa-edit"></i></a>
+                            <form action="{{ route('rapports.delete', $rapport->id) }}" method="post">
                               @method('DELETE')
                               @csrf
                               <button class="btn btn-danger btn-sm " title=""><i class="fa fa-times"></i></button>

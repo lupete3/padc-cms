@@ -317,6 +317,32 @@
               
             </ul>
           </li>
+          <!-- Gestion des blog -->
+          <li class="nav-item ">
+            <a href="#" class="nav-link ">
+              <i class="nav-icon fas fa-file"></i>
+              <p>
+                Rapports
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('rapports.create') }}" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Ajouter un rapport</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('rapports.index') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Afficher les rapports</p>
+                </a>
+              </li>
+              
+            </ul>
+          </li>
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

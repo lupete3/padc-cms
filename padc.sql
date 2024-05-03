@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : ven. 26 avr. 2024 à 17:23
+-- Généré le : ven. 03 mai 2024 à 13:32
 -- Version du serveur : 8.0.30
 -- Version de PHP : 8.2.17
 
@@ -58,6 +58,7 @@ CREATE TABLE `blogs` (
   `description` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `category_id` bigint UNSIGNED NOT NULL,
+  `equipe` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -66,10 +67,10 @@ CREATE TABLE `blogs` (
 -- Déchargement des données de la table `blogs`
 --
 
-INSERT INTO `blogs` (`id`, `title`, `slug`, `description`, `image`, `category_id`, `created_at`, `updated_at`) VALUES
-(1, 'PROJET D’APPUI A LA PRODUCTION AGRICOLE DE 300 MENAGES VULNERABLES DE CHAMINUNU DANS LE GROUPEMENT DE KALONGE EN TERRITOIRE DE KALEHE', 'projet-dappui-a-la-production-agricole-de-300-menages-vulnerables-de-chaminunu-dans-le-groupement-de-kalonge-en-territoire-de-kalehe', '<span style=\"font-family: system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, &quot;Noto Sans&quot;, &quot;Liberation Sans&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 20px;\">Ce projet est un appui aux agriculteurs de la localité de CHAMINUNU dont 70% des femmes en semences de chou pommé, chou-fleur, oignon, aubergine, poireau, amarantes en vue de l’amélioration de leur sécurité alimentaire.</span>', '1714137230.jpg', 1, '2024-04-26 11:13:50', '2024-04-26 11:13:50'),
-(2, 'PROJET DE PROMOTION DE LA SANTE BOVINE PAR L’IMPLANTATION DES COULOIRS D’ASPERSION DANS LA LOCALITE DE CHAMINUNU EN TERRITOIRE DE KALEHE', 'projet-de-promotion-de-la-sante-bovine-par-limplantation-des-couloirs-daspersion-dans-la-localite-de-chaminunu-en-territoire-de-kalehe', '<span style=\"font-family: system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, &quot;Noto Sans&quot;, &quot;Liberation Sans&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 20px;\">Ce projet vise l’implantation de 10 couloirs pilotes d’appui à l’amélioration des conditions sanitaires des bovins entretenus par les éleveurs locaux, particulièrement les femmes éleveuses de la localité de CHAMINUNU dans le Groupement de Kalonge, impuissants face aux maladies et vecteurs qui déciment leurs cheptels, en l’occurrence les bovins. L’objectif est de faire de l’élevage une ressource potentielle pour l’autonomisation des femmes et des éleveurs en général.</span>', '1714137350.jpg', 1, '2024-04-26 11:15:50', '2024-04-26 11:15:50'),
-(3, 'Activités de sensibilisation des élèves sur les maladies des mains sales dans la chefferie de BWITO, en territoire de RUTSHURU au Nord-Kivu', 'activites-de-sensibilisation-des-eleves-sur-les-maladies-des-mains-sales-dans-la-chefferie-de-bwito-en-territoire-de-rutshuru-au-nord-kivu', '<span style=\"font-family: system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, &quot;Noto Sans&quot;, &quot;Liberation Sans&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 20px;\">Dans le but de prévenir les maladies des mains sales et rompre la chaîne de transmission de celles-ci, PADC RDCongo organise régulièrement des sensibilisations dans les milieux scolaires pour informer les enfants sur les mécanismes de prévention des maladies des mains sales.</span>', '1714137384.jpg', 1, '2024-04-26 11:16:24', '2024-04-26 11:16:24');
+INSERT INTO `blogs` (`id`, `title`, `slug`, `description`, `image`, `category_id`, `equipe`, `created_at`, `updated_at`) VALUES
+(1, 'PROJET D’APPUI A LA PRODUCTION AGRICOLE DE 300 MENAGES VULNERABLES DE CHAMINUNU DANS LE GROUPEMENT DE KALONGE EN TERRITOIRE DE KALEHE', 'projet-dappui-a-la-production-agricole-de-300-menages-vulnerables-de-chaminunu-dans-le-groupement-de-kalonge-en-territoire-de-kalehe', 'PROJET D’APPUI A LA PRODUCTION AGRICOLE DE 300 MENAGES VULNERABLES DE CHAMINUNU DANS LE GROUPEMENT DE KALONGE EN TERRITOIRE DE KALEHE', '1714137230.jpg', 1, 'Agromome', '2024-04-26 11:13:50', '2024-05-03 11:27:48'),
+(2, 'PROJET DE PROMOTION DE LA SANTE BOVINE PAR L’IMPLANTATION DES COULOIRS D’ASPERSION DANS LA LOCALITE DE CHAMINUNU EN TERRITOIRE DE KALEHE', 'projet-de-promotion-de-la-sante-bovine-par-limplantation-des-couloirs-daspersion-dans-la-localite-de-chaminunu-en-territoire-de-kalehe', 'PROJET DE PROMOTION DE LA SANTE BOVINE PAR L’IMPLANTATION DES COULOIRS D’ASPERSION DANS LA LOCALITE DE CHAMINUNU EN TERRITOIRE DE KALEHE', '1714137350.jpg', 1, 'Artisants', '2024-04-26 11:15:50', '2024-05-03 11:28:08'),
+(3, 'Activités de sensibilisation des élèves sur les maladies des mains sales dans la chefferie de BWITO, en territoire de RUTSHURU au Nord-Kivu', 'activites-de-sensibilisation-des-eleves-sur-les-maladies-des-mains-sales-dans-la-chefferie-de-bwito-en-territoire-de-rutshuru-au-nord-kivu', 'Activités de sensibilisation des élèves sur les maladies des mains sales dans la chefferie de BWITO, en territoire de RUTSHURU au Nord-Kivu', '1714137384.jpg', 1, 'Commité', '2024-04-26 11:16:24', '2024-05-03 11:28:30');
 
 -- --------------------------------------------------------
 
@@ -90,7 +91,7 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
-(1, 'Projet', 'projet', '2024-04-26 11:10:25', '2024-04-26 11:10:25');
+(1, 'Projet', 'projet', '2024-04-26 11:10:25', '2024-04-26 15:32:10');
 
 -- --------------------------------------------------------
 
@@ -238,7 +239,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (10, '2023_04_17_140157_create_details_table', 1),
 (11, '2023_04_18_114055_create_comptes_table', 1),
 (12, '2024_04_26_154934_create_faqs_table', 2),
-(14, '2024_04_26_164036_create_partenaires_table', 3);
+(14, '2024_04_26_164036_create_partenaires_table', 3),
+(15, '2024_05_03_115309_create_rapports_table', 4);
 
 -- --------------------------------------------------------
 
@@ -293,6 +295,31 @@ CREATE TABLE `personal_access_tokens` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `rapports`
+--
+
+CREATE TABLE `rapports` (
+  `id` bigint UNSIGNED NOT NULL,
+  `titre` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `rapport` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `rapports`
+--
+
+INSERT INTO `rapports` (`id`, `titre`, `rapport`, `created_at`, `updated_at`) VALUES
+(1, 'RAPPORTS HEBDOMADAIRES DE PROTECTION', '1714739034.pdf', '2024-05-03 10:23:54', '2024-05-03 10:23:54'),
+(2, 'EVALUATIONS', '1714740631.pdf', '2024-05-03 10:50:31', '2024-05-03 10:50:31'),
+(3, 'RAPPORTS ANNUELS', '1714740756.pdf', '2024-05-03 10:52:37', '2024-05-03 10:52:37'),
+(4, 'RAPPORTS D\'ACTIVITES', '1714740781.pdf', '2024-05-03 10:53:01', '2024-05-03 10:53:01'),
+(5, 'GALERIE', '1714740812.pdf', '2024-05-03 10:53:32', '2024-05-03 10:53:32');
 
 -- --------------------------------------------------------
 
@@ -429,6 +456,12 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
+-- Index pour la table `rapports`
+--
+ALTER TABLE `rapports`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `users`
 --
 ALTER TABLE `users`
@@ -498,7 +531,7 @@ ALTER TABLE `faqs`
 -- AUTO_INCREMENT pour la table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT pour la table `partenaires`
@@ -511,6 +544,12 @@ ALTER TABLE `partenaires`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `rapports`
+--
+ALTER TABLE `rapports`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT pour la table `users`
